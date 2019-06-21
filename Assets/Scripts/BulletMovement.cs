@@ -8,7 +8,6 @@ public class BulletMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = Vector3.right * bulletSpeed;
 
     }
 
@@ -19,9 +18,11 @@ public class BulletMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);
+        Vector3 position = transform.position;
+        position.x += bulletSpeed*Time.fixedDeltaTime;
+        transform.position = position;
+
+        if (position.x > FieldSetting.fieldMax.x)
+            gameObject.SetActive(false);
     }
 }

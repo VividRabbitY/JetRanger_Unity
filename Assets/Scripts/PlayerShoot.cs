@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+
+
     private bool canShoot;
     private float shootCooldown=0.1f;
     private float timer;
 
-    public GameObject Bullet;
+    public ShotPool shotPool;
     public Transform shootPoint;
     // Start is called before the first frame update
     void Start()
     {
         canShoot = true;
+        
     }
 
     // Update is called once per frame
@@ -23,7 +26,7 @@ public class PlayerShoot : MonoBehaviour
 
         if(Input.GetButton("Fire2")&&canShoot)
         {
-            Instantiate(Bullet, shootPoint.position, Quaternion.identity);
+            shotPool.ShootFromPool(shootPoint.position);
             canShoot = false;
             timer = 0f;
         }

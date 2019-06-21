@@ -28,6 +28,7 @@ public class CircleShot : MonoBehaviour
         timer = 0.0f;
         state = ShootState.Prepare;
         startdirection = Vector3.left;
+
     }
 
     // Update is called once per frame

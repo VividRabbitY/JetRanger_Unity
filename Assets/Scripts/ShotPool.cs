@@ -77,4 +77,13 @@ public class ShotPool : MonoBehaviour
         enemyNextshot[shotType] = enemyNextshot[shotType] % maxOfEnemyPool;
         return eb;
     }
+
+    public Dictionary<EnemyshotType, GameObject[]> GetEnemyShotPool()
+    {
+        return enemyshotPools;
+    }
+    public GameObject[] GetPlayerShotPool()
+    {
+        return playershotpool;
+    }
 }

@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 255040048}
   - component: {fileID: 255040046}
   - component: {fileID: 255040045}
+  - component: {fileID: 255040047}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -199,6 +200,18 @@ MonoBehaviour:
   speed: 7.5
   jetForce: 20
   gravity: -30
+--- !u!114 &255040047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255040044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6d80bf76cd9dd488c75af6bf2170f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &255040048
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -471,7 +484,7 @@ MonoBehaviour:
   - {fileID: 7381020577037724750, guid: 19a379511eb2feb4b88f1545f629ef38, type: 3}
   enemyshots:
   - {fileID: 1940743768}
-  maxOfEnemyPool: 1000
+  maxOfEnemyPool: 2400
 --- !u!4 &1439577086
 Transform:
   m_ObjectHideFlags: 0
@@ -682,13 +695,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685234252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d3abb6ae1f69424d90caf4a021ed45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyshotpool: {fileID: 1439577085}
-  shotAmount: 0
+  shotAmount: 24
   prepareTime: 2
   coolDown: 0.1
   waveAmount: -1
@@ -701,13 +713,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685234252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d3abb6ae1f69424d90caf4a021ed45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyshotpool: {fileID: 1439577085}
-  shotAmount: 0
+  shotAmount: 24
   prepareTime: 2
   coolDown: 0.1
   waveAmount: -1
@@ -722,9 +733,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1685234252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923cb002f1e5b434a9c8df58a4e0e547, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bef1b0bfa672974ab2f5722e6815488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotAmount: 1
+  prepareTime: 2
+  coolDown: 0.05
+  waveAmount: 10
+  speed: 10
+  rotate: 0
 --- !u!1 &1844063075
 GameObject:
   m_ObjectHideFlags: 0

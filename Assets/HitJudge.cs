@@ -11,7 +11,7 @@ public class HitJudge : MonoBehaviour
 
     //debug
     public GameObject[] enemys;
-
+    public EnemySpawner spawner;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class HitJudge : MonoBehaviour
         enemyshotPools = GetComponent<ShotPool>().GetEnemyShotPool();
         playershotPool = GetComponent<ShotPool>().GetPlayerShotPool();
 
+        enemys = spawner.GetEnemyPool();
     }
 
     // Update is called once per frame

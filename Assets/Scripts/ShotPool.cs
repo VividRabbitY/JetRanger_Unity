@@ -49,7 +49,6 @@ public class ShotPool : MonoBehaviour
             }
             enemyNextshot[(EnemyshotType)i]=0;
         }
-        Debug.Log(enemyshotPools.Count);
 
 
     }

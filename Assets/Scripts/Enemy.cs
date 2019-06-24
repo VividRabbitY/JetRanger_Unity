@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    int hp;
+    public int hp=40;
     // Start is called before the first frame update
     void Start()
     {
-        hp = 40;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left*Time.deltaTime);
     }
     public void Hit()
     {

@@ -22,6 +22,8 @@ public enum ShootState
 public enum EnemyshotType
 {
     SmallBall,
+    Drop,
     BigBall,
+    
 }
 

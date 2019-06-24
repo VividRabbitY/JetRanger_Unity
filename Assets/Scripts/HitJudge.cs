@@ -37,6 +37,7 @@ public class HitJudge : MonoBehaviour
                     {
                         es.SetActive(false);
                         player.GetComponent<Player>().Hit();
+                        Debug.Log("Hit!");
                     }
                 }
             }

@@ -26,7 +26,6 @@ public class HomingShot : MonoBehaviour
     void Start()
     {
         enemyshotpool = ShotPool.instance;
-        Debug.Log(enemyshotpool);
         timer = 0.0f;
         state = ShootState.Prepare;
         startdirection = Vector3.left;

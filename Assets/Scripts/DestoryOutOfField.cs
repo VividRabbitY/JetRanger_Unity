@@ -13,10 +13,9 @@ public class DestoryOutOfField : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x<FieldSetting.fieldMin.x||
-            transform.position.x > FieldSetting.fieldMax.x||
+        if (transform.position.x < FieldSetting.fieldMin.x ||
+            transform.position.x > FieldSetting.fieldMax.x ||
             transform.position.y < FieldSetting.fieldMin.y||
-            transform.position.y > FieldSetting.fieldMax.y||
             transform.position.z < FieldSetting.fieldMin.z||
             transform.position.z > FieldSetting.fieldMax.z)
         {

@@ -74,22 +74,74 @@ public class EnemySpawner : MonoBehaviour
     void CreateStage()
     {
         stage1 = new List<SpawnEnemy>();
+    //01
         var spawn = new SpawnEnemy()
         {
             spawnTime = 3.0f,
-            enemycount = 2,
+            enemycount = 1,
         };
         stage1.Add(spawn);
+    //02
          spawn = new SpawnEnemy()
         {
-            spawnTime = 13.0f,
+            spawnTime = 10.0f,
+            enemycount = 1,
+        };
+        stage1.Add(spawn);
+    //03
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 17.0f,
             enemycount = 2,
         };
         stage1.Add(spawn);
+    //04
         spawn = new SpawnEnemy()
         {
-            spawnTime = 23.0f,
+            spawnTime = 24.0f,
+            enemycount = 1,
+        };
+        stage1.Add(spawn);
+    //05
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 31.0f,
             enemycount = 2,
+        };
+        stage1.Add(spawn);
+    //06
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 38.0f,
+            enemycount = 2,
+        };
+        stage1.Add(spawn);
+    //07
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 45.0f,
+            enemycount = 1,
+        };
+        stage1.Add(spawn);
+    //08
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 47.0f,
+            enemycount = 1,
+        };
+        stage1.Add(spawn);
+    //09
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 49.0f,
+            enemycount = 1,
+        };
+        stage1.Add(spawn);
+    //10
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 56.0f,
+            enemycount = 1,
         };
         stage1.Add(spawn);
 

@@ -15,7 +15,7 @@ MonoBehaviour:
   shotAmount: 6
   prepareTime: 2
   coolDown: 0.1
-  waveAmount: -1
+  waveAmount: 40
   speed: 5
   rotate: -4
 --- !u!114 &4555603294627483843
@@ -33,7 +33,7 @@ MonoBehaviour:
   shotAmount: 6
   prepareTime: 2
   coolDown: 0.1
-  waveAmount: -1
+  waveAmount: 40
   speed: 5
   rotate: 4
 --- !u!1001 &870497793364276917

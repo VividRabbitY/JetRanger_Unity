@@ -74,78 +74,69 @@ public class EnemySpawner : MonoBehaviour
     void CreateStage()
     {
         stage1 = new List<SpawnEnemy>();
-    //01
+    //01 Element_0
         var spawn = new SpawnEnemy()
         {
             spawnTime = 3.0f,
             enemycount = 1,
         };
         stage1.Add(spawn);
-    //02
+    //02 Element_1
          spawn = new SpawnEnemy()
         {
             spawnTime = 10.0f,
             enemycount = 1,
         };
         stage1.Add(spawn);
-    //03
+    //03 Element_2 & 3
         spawn = new SpawnEnemy()
         {
             spawnTime = 17.0f,
             enemycount = 2,
         };
         stage1.Add(spawn);
-    //04
+    //04 Element_4 
         spawn = new SpawnEnemy()
         {
             spawnTime = 24.0f,
             enemycount = 1,
         };
         stage1.Add(spawn);
-    //05
+    //05 Element_5 & 6
         spawn = new SpawnEnemy()
         {
             spawnTime = 31.0f,
             enemycount = 2,
         };
         stage1.Add(spawn);
-    //06
+    //06 Element_7 & 8
         spawn = new SpawnEnemy()
         {
             spawnTime = 38.0f,
             enemycount = 2,
         };
         stage1.Add(spawn);
-    //07
+    //07 Element_9
         spawn = new SpawnEnemy()
         {
             spawnTime = 45.0f,
             enemycount = 1,
         };
         stage1.Add(spawn);
-    //08
+    //08 Element_10
         spawn = new SpawnEnemy()
         {
             spawnTime = 47.0f,
             enemycount = 1,
         };
         stage1.Add(spawn);
-    //09
+    //09 Element_11 & 12
         spawn = new SpawnEnemy()
         {
-            spawnTime = 49.0f,
-            enemycount = 1,
+            spawnTime = 54.0f,
+            enemycount = 2,
         };
         stage1.Add(spawn);
-    //10
-        spawn = new SpawnEnemy()
-        {
-            spawnTime = 56.0f,
-            enemycount = 1,
-        };
-        stage1.Add(spawn);
-
-
     }
 
     public GameObject[] GetEnemyPool()

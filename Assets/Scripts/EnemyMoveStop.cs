@@ -2,27 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyMoveStop : MonoBehaviour
 {
-    int hp;
     // Start is called before the first frame update
     void Start()
     {
-        hp = 40;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.Translate(Vector3.left*Time.deltaTime);
-    }
-    public void Hit()
-    {
-        hp -= 1;
-        if(hp<=0)
+        if (transform.position.x > 15.0f)
         {
-            gameObject.SetActive(false);
+            transform.Translate(Vector3.left * Time.deltaTime);
         }
     }
 }

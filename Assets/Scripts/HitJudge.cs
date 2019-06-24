@@ -20,7 +20,7 @@ public class HitJudge : MonoBehaviour
         enemyshotPools = GetComponent<ShotPool>().GetEnemyShotPool();
         playershotPool = GetComponent<ShotPool>().GetPlayerShotPool();
 
-        enemys = spawner.GetEnemyPool();
+        //enemys = spawner.GetEnemyPool();
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class HitJudge : MonoBehaviour
                     {
                         es.SetActive(false);
                         player.GetComponent<Player>().Hit();
+                        Debug.Log("Hit!");
                     }
                 }
             }

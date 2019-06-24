@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Boss : MonoBehaviour
 {
-    public int hp=40;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,13 +13,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    }
-    public void Hit()
-    {
-        hp -= 1;
-        if(hp<=0)
-        {
-            gameObject.SetActive(false);
-        }
+        
     }
 }

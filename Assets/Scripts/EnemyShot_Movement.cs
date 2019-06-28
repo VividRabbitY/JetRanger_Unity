@@ -7,9 +7,6 @@ public class EnemyShot_Movement : MonoBehaviour
     private Vector3 direction;
     private float speed;
 
-    // Start is called before the first frame update
-
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(direction * speed*Time.deltaTime);

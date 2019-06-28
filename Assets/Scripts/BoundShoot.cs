@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleShot : MonoBehaviour
+
+public class BoundShoot : MonoBehaviour
 {
-    protected ShotPool enemyshotpool;
+    private ShotPool enemyshotpool;
 
 
     public int shotAmount;
@@ -36,17 +37,17 @@ public class CircleShot : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        switch(state)
+        switch (state)
         {
             case ShootState.Prepare:
-                if(timer>prepareTime)
+                if (timer > prepareTime)
                 {
                     state = ShootState.Shooting;
                     timer = coolDown;
                 }
                 break;
             case ShootState.Shooting:
-                if(timer>coolDown)
+                if (timer > coolDown)
                 {
 
                     Shoot(startdirection);
@@ -54,7 +55,7 @@ public class CircleShot : MonoBehaviour
                     timer = 0.0f;
                     waveAmount--;
                 }
-                if(waveAmount==0)
+                if (waveAmount == 0)
                 {
                     state = ShootState.Ending;
                 }
@@ -64,15 +65,15 @@ public class CircleShot : MonoBehaviour
         }
     }
 
-    virtual public  void Shoot(Vector3 start)
+     public void Shoot(Vector3 start)
     {
         for (int i = 0; i < shotAmount; i++)
         {
-            GameObject shot =enemyshotpool.ShootFromPool(EnemyshotType.SmallBall,transform.position);
-            EnemyShot_Movement ebm = shot.GetComponent<EnemyShot_Movement>();
-            ebm.Create(Quaternion.Euler(0, 360/shotAmount * i, 0) * start, speed);
+            GameObject shot = enemyshotpool.ShootFromPool(EnemyshotType.Bound, transform.position);
+            var ebm = shot.GetComponent<EnemyShot_Bound>();
+            ebm.Create(Quaternion.Euler(0, 360 / shotAmount * i, 0) * start, speed);
 
         }
     }
-    
+
 }

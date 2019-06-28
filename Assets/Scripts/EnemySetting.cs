@@ -23,7 +23,18 @@ public enum EnemyshotType
 {
     SmallBall,
     Drop,
+    Bound,
     BigBall,
     
+}
+
+public enum BossState
+{
+    Prepare,
+    L1,
+    L2,
+    L3,
+    Finish,
+    Between,
 }
 

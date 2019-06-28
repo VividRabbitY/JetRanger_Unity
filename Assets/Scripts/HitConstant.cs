@@ -13,6 +13,7 @@ public static class HitConstant
         { EnemyshotType.SmallBall,0.2f+playerHitRadio },
         {EnemyshotType.BigBall,0.4f+playerHitRadio },
         {EnemyshotType.Drop,0.2f+playerHitRadio },
+        { EnemyshotType.Bound,0.2f+playerHitRadio},
     };
 
 

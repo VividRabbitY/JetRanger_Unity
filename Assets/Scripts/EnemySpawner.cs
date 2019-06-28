@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -13,6 +14,9 @@ public class EnemySpawner : MonoBehaviour
     List<SpawnEnemy> stage1;
     SpawnEnemy[] stage1_array;
     GameObject[] enemysPool;
+
+    public GameObject[] bossHitParts;
+    public GameObject boss;
 
     float nextSpawnTime;
     int spawncount;
@@ -29,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         timer = 0.0f;
-        enemysPool = new GameObject[enemyPrefabs.Length];
+        enemysPool = new GameObject[enemyPrefabs.Length+bossHitParts.Length];
 
         int poolcount = 0;
         foreach (var e in enemyPrefabs)
@@ -39,6 +43,8 @@ public class EnemySpawner : MonoBehaviour
             enemysPool[poolcount] = enemyins;
             poolcount++;
         }
+
+        Array.Copy(bossHitParts, 0, enemysPool, enemyPrefabs.Length, bossHitParts.Length);
 
         spawncount = 0;
         enemycount = 0;
@@ -68,6 +74,10 @@ public class EnemySpawner : MonoBehaviour
                     stageEnd = true;
                 }
             }
+        }
+        if(stageEnd&&timer>=70.0f)
+        {
+            boss.SetActive(true);
         }
     }
 

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f8de43b420932414fa721e99eb41db49
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Noise Machine
+  fontNames:
+  - Noise Machine
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f5704bf05bb5e37458590579791d2e38, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

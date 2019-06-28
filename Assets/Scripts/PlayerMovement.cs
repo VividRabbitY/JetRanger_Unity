@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float playerRadio = 0.5f;
 
+    public ParticleSystem jetpackParticle;
+
 
     private void Awake()
     {
@@ -45,10 +47,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
                 velocity.y += jetForce *1.2f*Time.deltaTime;
+            jetpackParticle.Emit(1);
         }
         if (Input.GetButtonDown("Fire1"))
         {
-
+            jetpackParticle.Emit(20);
             velocity = Vector3.zero;
             if (onGround)
                 velocity.y += jetForce * 18.0f * Time.deltaTime;

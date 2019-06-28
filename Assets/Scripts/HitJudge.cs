@@ -50,7 +50,12 @@ public class HitJudge : MonoBehaviour
                     if((es.transform.position-playerPos.position).sqrMagnitude<hitradiosqr)
                     {
                         es.SetActive(false);
+                        if (!player.GetComponent<Player>().IsDamaged())
+                        {
+                            playerHitparticle.GetComponent<ParticleSystem>().Play();
+                        }
                         player.GetComponent<Player>().Hit();
+                        playerHitparticle.transform.position = player.transform.position;
                         Debug.Log("Hit!");
                     }
                 }
@@ -68,6 +73,11 @@ public class HitJudge : MonoBehaviour
                         if ((e.transform.position - ps.transform.position).sqrMagnitude < HitConstant.playerShotRadio * HitConstant.playerShotRadio)
                         {
                             e.GetComponent<Enemy>().Hit();
+                            Vector3 hitpos = ps.transform.position;
+                            hitpos.x += 0.2f;
+                            hitpos.y += 0.1f;
+                            EnemyHit(hitpos );
+                            ps.SetActive(false);
                         }
                     }
                 }
@@ -76,5 +86,13 @@ public class HitJudge : MonoBehaviour
         }
 
 
+    }
+
+    void EnemyHit(Vector3 pos)
+    {
+        enemyHitParticles[particleNo].transform.position = pos;
+        enemyHitParticles[particleNo].GetComponent<ParticleSystem>().Play();
+        particleNo++;
+        particleNo = particleNo % enemyHitParticles.Length;
     }
 }

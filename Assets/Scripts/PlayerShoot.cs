@@ -29,6 +29,7 @@ public class PlayerShoot : MonoBehaviour
             shotPool.ShootFromPool(shootPoint.position);
             canShoot = false;
             timer = 0f;
+            AudioManager.instance.PlaySe(SE.PlayerShoot);
         }
         if(timer>shootCooldown)
         {

@@ -23,6 +23,8 @@ public class EnemySpawner : MonoBehaviour
     int enemycount;
     bool stageEnd;
 
+    public GameObject ClearUI;
+
     private void Awake()
     {
         CreateStage();
@@ -79,6 +81,7 @@ public class EnemySpawner : MonoBehaviour
         {
             boss.SetActive(true);
         }
+        GameClear();
     }
 
     void CreateStage()
@@ -153,4 +156,13 @@ public class EnemySpawner : MonoBehaviour
     {
         return enemysPool;
     }
+
+    public void GameClear()
+    {
+        if (bossHitParts[bossHitParts.Length - 1].GetComponent<Enemy>().IsDead())
+        {
+            ClearUI.SetActive(true);
+        }
+    }
+
 }

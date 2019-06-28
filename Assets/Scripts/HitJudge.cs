@@ -9,9 +9,14 @@ public class HitJudge : MonoBehaviour
     private Dictionary<EnemyshotType, GameObject[]> enemyshotPools;
     private GameObject[] playershotPool;
 
-    //debug
     public GameObject[] enemys;
     public EnemySpawner spawner;
+
+    public GameObject enemyHitperfab;
+    GameObject[] enemyHitParticles;
+    int particleNo;
+    public GameObject playerHitperfab;
+    GameObject playerHitparticle;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +26,16 @@ public class HitJudge : MonoBehaviour
         playershotPool = GetComponent<ShotPool>().GetPlayerShotPool();
 
         enemys = spawner.GetEnemyPool();
+
+        enemyHitParticles = new GameObject[5];
+        for (int i = 0; i < enemyHitParticles.Length; i++)
+        {
+            enemyHitParticles[i] = Instantiate(enemyHitperfab);
+        }
+        particleNo = 0;
+        playerHitparticle = Instantiate(playerHitperfab);
     }
+
 
     // Update is called once per frame
     void Update()

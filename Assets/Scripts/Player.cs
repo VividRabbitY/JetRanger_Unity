@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     float timeBetweenDamage;
     bool damaged;
     float timer;
+
+    public GameObject overUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +43,7 @@ public class Player : MonoBehaviour
         }
         if(Hp<=0)
         {
-            //gameover();
+            overUI.SetActive(true);
             gameObject.SetActive(false);
         }
     }

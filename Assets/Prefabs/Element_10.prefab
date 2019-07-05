@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotAmount: 10
-  prepareTime: 0.3
-  coolDown: 0.2
-  waveAmount: 50
-  speed: 3
+  prepareTime: 1
+  coolDown: 0.05
+  waveAmount: 10
+  speed: 8
   rotate: 0
 --- !u!114 &7081353922491673348
 MonoBehaviour:

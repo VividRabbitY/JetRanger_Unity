@@ -56,7 +56,7 @@ public class HitJudge : MonoBehaviour
                         }
                         player.GetComponent<Player>().Hit();
                         playerHitparticle.transform.position = player.transform.position;
-                        Debug.Log("Hit!");
+
                     }
                 }
             }

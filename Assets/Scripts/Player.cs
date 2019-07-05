@@ -44,18 +44,18 @@ public class Player : MonoBehaviour
     {
         if (!damaged)
         {
-            Hp -= 250;
+            Hp -= 100;
             damaged = true;
             GetComponent<Renderer>().material = damageMat;
 
             timer = 0.0f;
 
             Hp = Mathf.Max(Hp, 0);
-            Debug.Log(Hp);
+
 
             Vector3 hpscal = hpBar.transform.localScale;
             hpscal.z = hpscal.z * ((float)Hp / maxHp);
-            Debug.Log(hpscal);
+
             hpBar.transform.localScale = hpscal;
 
         }

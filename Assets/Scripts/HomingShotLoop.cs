@@ -24,7 +24,7 @@ public class HomingShotLoop : MonoBehaviour
 
     private ShootState state;
 
-
+    AudioManager audioManager;
 
     void Start()
     {
@@ -35,6 +35,8 @@ public class HomingShotLoop : MonoBehaviour
         startdirection = Vector3.left;
         shotCount = 0;
         iscoolDown = false;
+
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -57,6 +59,7 @@ public class HomingShotLoop : MonoBehaviour
             case ShootState.Shooting:
                 if (!iscoolDown&& timer > coolDown)
                 {
+                    audioManager.PlaySe(SE.EnemyShoot);
                     Shoot(startdirection);
                     startdirection = Quaternion.Euler(0.0f, rotate, 0.0f) * startdirection;
                     timer = 0.0f;

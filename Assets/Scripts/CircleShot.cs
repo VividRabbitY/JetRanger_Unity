@@ -20,6 +20,8 @@ public class CircleShot : MonoBehaviour
 
     private ShootState state;
 
+    AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,8 @@ public class CircleShot : MonoBehaviour
         timer = 0.0f;
         state = ShootState.Prepare;
         startdirection = Vector3.left;
+
+        audioManager = AudioManager.instance;
 
     }
 
@@ -48,7 +52,7 @@ public class CircleShot : MonoBehaviour
             case ShootState.Shooting:
                 if(timer>coolDown)
                 {
-
+                    audioManager.PlaySe(SE.EnemyShoot);
                     Shoot(startdirection);
                     startdirection = Quaternion.Euler(0.0f, rotate, 0.0f) * startdirection;
                     timer = 0.0f;

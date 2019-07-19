@@ -7,7 +7,6 @@ public class HomingShot : MonoBehaviour
     private ShotPool enemyshotpool;
 
 
-    public int shotAmount;
     public float prepareTime;
     public float coolDown;
     public int waveAmount;
@@ -15,13 +14,13 @@ public class HomingShot : MonoBehaviour
     public float speed;
     public float rotate;
     private Vector3 startdirection;
-    
+    private Vector3 shootPos;
 
     private float timer;
 
     private ShootState state;
 
-    
+    AudioManager audioManager;
 
     void Start()
     {
@@ -29,6 +28,8 @@ public class HomingShot : MonoBehaviour
         timer = 0.0f;
         state = ShootState.Prepare;
         startdirection = Vector3.left;
+
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -45,12 +46,14 @@ public class HomingShot : MonoBehaviour
                     timer = coolDown;
                     Vector3 posXZ = new Vector3(transform.position.x, 0.0f, transform.position.z);
                     startdirection = (PlayerPosition.position - posXZ).normalized;
+                    shootPos = transform.position;
                 }
                 break;
             case ShootState.Shooting:
                 if (timer > coolDown)
                 {
-                    Shoot(startdirection);
+                    audioManager.PlaySe(SE.EnemyShoot);
+                    Shoot(startdirection,shootPos);
                     startdirection = Quaternion.Euler(0.0f, rotate, 0.0f) * startdirection;
                     timer = 0.0f;
                     waveAmount--;
@@ -73,5 +76,12 @@ public class HomingShot : MonoBehaviour
 
     }
 
+    private void Shoot(Vector3 start,Vector3 pos)
+    {
+        GameObject shot = enemyshotpool.ShootFromPool(EnemyshotType.SmallBall, pos);
+        EnemyShot_Movement ebm = shot.GetComponent<EnemyShot_Movement>();
+        ebm.Create(start, speed);
+
+    }
 
 }

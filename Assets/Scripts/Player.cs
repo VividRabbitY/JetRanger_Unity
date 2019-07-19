@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public Material normalMat;
     public Material damageMat;
 
+    AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,8 @@ public class Player : MonoBehaviour
         timeBetweenDamage = 3.0f;
         damaged = false;
         timer = 0.0f;
-        
+
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -48,6 +51,8 @@ public class Player : MonoBehaviour
             damaged = true;
             GetComponent<Renderer>().material = damageMat;
 
+            GetComponent<Animator>().SetTrigger("damage");
+
             timer = 0.0f;
 
             Hp = Mathf.Max(Hp, 0);
@@ -57,9 +62,9 @@ public class Player : MonoBehaviour
             hpscal.z = hpscal.z * ((float)Hp / maxHp);
 
             hpBar.transform.localScale = hpscal;
-
+            audioManager.PlaySe(SE.PlayerHit);
         }
-        if(Hp<=0)
+        if (Hp<=0)
         {
             overUI.SetActive(true);
             gameObject.SetActive(false);

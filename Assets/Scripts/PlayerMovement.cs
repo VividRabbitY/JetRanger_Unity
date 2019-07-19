@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem jetpackParticle;
 
+    AudioManager audioManager;
 
     private void Awake()
     {
@@ -26,11 +27,13 @@ public class PlayerMovement : MonoBehaviour
         moveinput = Vector3.zero;
         onGround = true;
         lastonground = true;
+
    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioManager = AudioManager.instance;
+
     }
 
     // Update is called once per frame
@@ -48,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
         {
                 velocity.y += jetForce *1.2f*Time.deltaTime;
             jetpackParticle.Emit(1);
+            audioManager.PlaySe(SE.PlayerJet);
+
         }
         if (Input.GetButtonDown("Fire1"))
         {

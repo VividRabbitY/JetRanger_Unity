@@ -13,6 +13,8 @@ public class Boss : MonoBehaviour
     public GameObject[] level2;
     public GameObject level3;
 
+    public GameObject bossModel;
+
     float prepareTime;
     float endingTime;
     float betweenTime;
@@ -64,6 +66,7 @@ public class Boss : MonoBehaviour
                         nextState = BossState.L2;
                         timer = 0.0f;
 
+                        bossModel.GetComponent<Animator>().SetTrigger("change");
                         foreach (var e in level2)
                         {
                             e.SetActive(true);

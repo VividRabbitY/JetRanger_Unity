@@ -17,6 +17,7 @@ public class HitJudge : MonoBehaviour
     int particleNo;
     public GameObject playerHitperfab;
     GameObject playerHitparticle;
+    public GameObject enemyDiedParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -73,9 +74,14 @@ public class HitJudge : MonoBehaviour
                         if ((e.transform.position - ps.transform.position).sqrMagnitude < HitConstant.playerShotRadio * HitConstant.playerShotRadio)
                         {
                             e.GetComponent<Enemy>().Hit();
+                            bool isdead = e.GetComponent<Enemy>().IsDead();
                             Vector3 hitpos = ps.transform.position;
-                            hitpos.x += 0.2f;
-                            hitpos.y += 0.1f;
+                            if (isdead)
+                            {
+                                enemyDiedParticle.transform.position = e.transform.position;
+                                enemyDiedParticle.GetComponent<ParticleSystem>().Play();
+                            }
+
                             EnemyHit(hitpos );
                             ps.SetActive(false);
                         }

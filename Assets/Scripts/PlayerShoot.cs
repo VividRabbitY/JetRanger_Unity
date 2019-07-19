@@ -12,11 +12,14 @@ public class PlayerShoot : MonoBehaviour
 
     public ShotPool shotPool;
     public Transform shootPoint;
+
+    AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
         canShoot = true;
-        
+
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -29,7 +32,8 @@ public class PlayerShoot : MonoBehaviour
             shotPool.ShootFromPool(shootPoint.position);
             canShoot = false;
             timer = 0f;
-            AudioManager.instance.PlaySe(SE.PlayerShoot);
+            audioManager.PlaySe(SE.PlayerShoot);
+            
         }
         if(timer>shootCooldown)
         {

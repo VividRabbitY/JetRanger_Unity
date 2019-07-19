@@ -6,11 +6,16 @@ public class Enemy : MonoBehaviour
 {
     public int hp=40;
     bool isDeadFlag=false;
-    public int score; 
+    public int score;
+
+    public GameObject enemymodel;
+
+    AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
         isDeadFlag = false;
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -23,11 +28,17 @@ public class Enemy : MonoBehaviour
     {
         hp -= 1;
         ScoreManager.instance.AddScore(10);
+        audioManager.PlaySe(SE.EnemyHit);
         if(hp<=0)
         {
             isDeadFlag = true;
+            if(enemymodel!=null)
+            {
+                enemymodel.SetActive(false);
+            }
             ScoreManager.instance.AddScore(score);
             gameObject.SetActive(false);
+            audioManager.PlaySe(SE.EnemyDie);
         }
     }
 

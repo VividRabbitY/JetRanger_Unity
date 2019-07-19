@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
         if (!seSources[(int)se].isPlaying)
         {
             seSources[(int)se].Play();
-                }
+        }
     }
 }
 
@@ -24,6 +24,7 @@ public enum SE
 {
     PlayerShoot,
     PlayerHit,
+    PlayerJet,
     EnemyShoot,
     EnemyHit,
     EnemyDie,

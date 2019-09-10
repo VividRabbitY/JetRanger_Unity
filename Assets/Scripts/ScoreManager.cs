@@ -6,11 +6,14 @@ using TMPro;
 public  class ScoreManager : MonoBehaviour
 {
     int score;
+    int highscore;
+    public bool isHighScore;
     public TextMeshProUGUI uGUI;
     public static ScoreManager instance;
 
     public TextMeshProUGUI clear;
     public TextMeshProUGUI gameover;
+    public GameObject[] highscoreObj;
 
     // Start is called before the first frame update
     private void Awake()
@@ -19,8 +22,12 @@ public  class ScoreManager : MonoBehaviour
     }
     void Start()
     {
+        highscore = PlayerPrefs.GetInt("HighScore", 0);
         score = 0;
+        isHighScore = false;
         uGUI.text = score.ToString();
+        clear.text = score.ToString();
+        gameover.text = score.ToString();
 
     }
 
@@ -35,6 +42,15 @@ public  class ScoreManager : MonoBehaviour
         uGUI.text = score.ToString();
         clear.text = score.ToString();
         gameover.text = score.ToString();
+        if (score >= highscore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            isHighScore = true;
+            foreach(var o in highscoreObj)
+            {
+                o.SetActive(true);
+            }
+        }
     }
 
 }

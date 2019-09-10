@@ -106,8 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae72e483dbb96349bd72a3a93cfccd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 2
   score: 10000
+  enemymodel: {fileID: 0}
 --- !u!114 &6098846305106705703
 MonoBehaviour:
   m_ObjectHideFlags: 0

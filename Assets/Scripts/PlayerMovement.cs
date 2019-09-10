@@ -51,11 +51,13 @@ public class PlayerMovement : MonoBehaviour
         {
                 velocity.y += jetForce *1.2f*Time.deltaTime;
             jetpackParticle.Emit(1);
-            audioManager.PlaySe(SE.PlayerJet);
+            audioManager.PlayLoopSE(SE.PlayerJet);
 
         }
         if (Input.GetButtonDown("Fire1"))
         {
+            audioManager.PlayLoopSE(SE.PlayerJet);
+
             jetpackParticle.Emit(20);
             velocity = Vector3.zero;
             if (onGround)
@@ -63,10 +65,10 @@ public class PlayerMovement : MonoBehaviour
             else
                 velocity.y += jetForce * 8.0f * Time.deltaTime;
         }
-        //if(Input.GetButtonUp("Fire1"))
-        //{
-        //    velocity.y = 0.0f;
-        //}
+        if (Input.GetButtonUp("Fire1"))
+        {
+            audioManager.StopSe(SE.PlayerJet);
+        }
 
 
         velocity.x = moveinput.x;

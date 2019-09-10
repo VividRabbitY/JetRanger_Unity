@@ -78,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
         }
-        if(stageEnd&&timer>=65.0f)
+        if(stageEnd&&timer>=60.0f)
         {
             bossModel.GetComponent<Animator>().SetTrigger("appear");
             boss.SetActive(true);
@@ -92,42 +92,16 @@ public class EnemySpawner : MonoBehaviour
     //01 Element_0 wave1_L
         var spawn = new SpawnEnemy()
         {
-            spawnTime = 3.0f,
+            spawnTime = 7.0f,
             enemycount = 1,
         };
         stage1.Add(spawn);
         spawn = new SpawnEnemy()
         {
-            spawnTime = 3.5f,
+            spawnTime = 7.5f,
             enemycount = 1,
         };
         stage1.Add(spawn);
-        spawn = new SpawnEnemy()
-        {
-            spawnTime = 4.0f,
-            enemycount = 1,
-        };
-        stage1.Add(spawn);
-        spawn = new SpawnEnemy()
-        {
-            spawnTime = 4.5f,
-            enemycount = 1,
-        };
-        stage1.Add(spawn);
-        spawn = new SpawnEnemy()
-        {
-            spawnTime = 5.0f,
-            enemycount = 1,
-        };
-        stage1.Add(spawn);
-        spawn = new SpawnEnemy()
-        {
-            spawnTime = 5.5f,
-            enemycount = 1,
-        };
-        stage1.Add(spawn);
-
-        //02 Element_1 wave1_R
         spawn = new SpawnEnemy()
         {
             spawnTime = 8.0f,
@@ -152,15 +126,41 @@ public class EnemySpawner : MonoBehaviour
             enemycount = 1,
         };
         stage1.Add(spawn);
+
+        //02 Element_1 wave1_R
         spawn = new SpawnEnemy()
         {
-            spawnTime = 10.0f,
+            spawnTime = 11.0f,
             enemycount = 1,
         };
         stage1.Add(spawn);
         spawn = new SpawnEnemy()
         {
-            spawnTime = 10.5f,
+            spawnTime = 11.5f,
+            enemycount = 1,
+        };
+        stage1.Add(spawn);
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 12.0f,
+            enemycount = 1,
+        };
+        stage1.Add(spawn);
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 12.5f,
+            enemycount = 1,
+        };
+        stage1.Add(spawn);
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 13.0f,
+            enemycount = 1,
+        };
+        stage1.Add(spawn);
+        spawn = new SpawnEnemy()
+        {
+            spawnTime = 13.5f,
             enemycount = 1,
         };
         stage1.Add(spawn);

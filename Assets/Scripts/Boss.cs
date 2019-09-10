@@ -24,7 +24,7 @@ public class Boss : MonoBehaviour
     {
         state = BossState.Prepare;
         nextState = BossState.L1;
-        prepareTime = 3.0f;
+        prepareTime = 3.5f;
         endingTime = 3.0f;
         betweenTime = 1.0f;
     }

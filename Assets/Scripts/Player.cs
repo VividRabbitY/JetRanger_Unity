@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    int maxHp = 500;
+    int maxHp = 5;
     int Hp;
     float timeBetweenDamage;
     bool damaged;
     float timer;
 
     public GameObject overUI;
-    public GameObject hpBar;
+    public GameObject[] hpBar;
+    public GameObject hpclef;
+    public Material hp1;
+    public Material hp2;
 
     public Material normalMat;
     public Material damageMat;
@@ -47,7 +50,7 @@ public class Player : MonoBehaviour
     {
         if (!damaged)
         {
-            Hp -= 100;
+            Hp -= 1;
             damaged = true;
             GetComponent<Renderer>().material = damageMat;
 
@@ -57,11 +60,26 @@ public class Player : MonoBehaviour
 
             Hp = Mathf.Max(Hp, 0);
 
+            
+            hpBar[Hp].SetActive(false);
+            if(Hp<=3)
+            {
+                foreach(var h in hpBar)
+                {
+                    hpclef.GetComponentInChildren<Renderer>().material = hp1;
+                    h.GetComponentInChildren<Renderer>().material = hp1;
+                }
+            }
+            if (Hp <= 1)
+            {
+                foreach (var h in hpBar)
+                {
+                    hpclef.GetComponentInChildren<Renderer>().material = hp2;
+                    h.GetComponentInChildren<Renderer>().material = hp2;
+                }
+            }
 
-            Vector3 hpscal = hpBar.transform.localScale;
-            hpscal.z = hpscal.z * ((float)Hp / maxHp);
 
-            hpBar.transform.localScale = hpscal;
             audioManager.PlaySe(SE.PlayerHit);
         }
         if (Hp<=0)

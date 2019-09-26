@@ -6,16 +6,17 @@ public class ShotPool : MonoBehaviour
 {
     public static ShotPool instance;
 
+//プレイヤー弾プール
     public GameObject playershot;
     public Transform shots;
     GameObject[] playershotpool;
     public int maxOfPlayerPool;
-
+//エネミー弾プール
     public GameObject[] enemyshot;
     public Transform[] enemyshots;
     private Dictionary<EnemyshotType, GameObject[]> enemyshotPools;
     public int maxOfEnemyPool;
-
+//次の弾番号
     private int playernextshot;
     private Dictionary<EnemyshotType, int> enemyNextshot;
 
@@ -27,6 +28,7 @@ public class ShotPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    //プレイヤー弾プール初期化
         playershotpool = new GameObject[maxOfPlayerPool];
         for (int i = 0; i < maxOfPlayerPool; i++)
         {
@@ -35,7 +37,7 @@ public class ShotPool : MonoBehaviour
             playershotpool[i] = b;
         }
         playernextshot = 0;
-
+    //エネミー弾プール初期化
         enemyshotPools = new Dictionary<EnemyshotType, GameObject[]>();
         enemyNextshot = new Dictionary<EnemyshotType, int>();
         for (int i = 0; i < enemyshot.Length; i++)
@@ -58,7 +60,7 @@ public class ShotPool : MonoBehaviour
     {
         
     }
-
+//プレイヤー弾発射
     public void ShootFromPool(Vector3 position)
     {
         playershotpool[playernextshot].transform.position = position;
@@ -66,6 +68,7 @@ public class ShotPool : MonoBehaviour
         playernextshot++;
         playernextshot = playernextshot % maxOfPlayerPool;
     }
+//エネミー弾発射
     public GameObject ShootFromPool( EnemyshotType shotType,Vector3 position)
 
     {

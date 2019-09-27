@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
+//エネミーオブジェクト生成および出現
 public class EnemySpawner : MonoBehaviour
 {
     float timer;

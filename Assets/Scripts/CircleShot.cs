@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//自身から円形の弾を発射する
 public class CircleShot : MonoBehaviour
 {
     protected ShotPool enemyshotpool;
 
 
-    public int shotAmount;
-    public float prepareTime;
-    public float coolDown;
-    public int waveAmount;
+    public int shotAmount;//一回発射数
+    public float prepareTime;//生成から発射の時間
+    public float coolDown;//発射間隔
+    public int waveAmount;//発射回数（-1時無限）
 
-    public float speed;
-    public float rotate;
+    public float speed;//弾速度
+    public float rotate;//隣接弾の角度
     private Vector3 startdirection;
 
     private float timer;

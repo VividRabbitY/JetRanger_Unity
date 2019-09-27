@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//プレイヤーHP管理
 public class Player : MonoBehaviour
 {
     int maxHp = 5;

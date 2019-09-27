@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//エネミーHPとスコア管理
 public class Enemy : MonoBehaviour
 {
     public int hp=40;

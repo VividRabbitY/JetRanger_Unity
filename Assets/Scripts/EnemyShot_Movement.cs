@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//直線発射する弾
 public class EnemyShot_Movement : MonoBehaviour
 {
     private Vector3 direction;

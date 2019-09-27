@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//プレイヤーに向かって射撃する
 public class HomingShotLoop : MonoBehaviour
 {
     private ShotPool enemyshotpool;
 
 
-    public int shotAmount;
-    public float prepareTime;
-    public float coolDown;
-    public int waveAmount;
-    public float waveCoolDown;
+    public int shotAmount;//一回の発射数
+    public float prepareTime;//生成から発射の時間
+    public float coolDown;//発射間隔
+    public int waveAmount;//発射回数
+    public float waveCoolDown;//発射ウェーブ間の間隔
     bool iscoolDown;
 
-    public float speed;
-    public float rotate;
+    public float speed;//弾速度
+    public float rotate;//隣接弾の角度
     private Vector3 startdirection;
-    public float startRotate;
+    public float startRotate;//開始角度
 
     private float timer;
     private int shotCount;

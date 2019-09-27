@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //エネミー移動制御
+//入場、射撃中、退場の位置、時間を指定、その路線に従って移動する
 public class EnemyMove1 : MonoBehaviour
 {
     enum MoveState

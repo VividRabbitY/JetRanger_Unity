@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//スコア管理と更新
 public  class ScoreManager : MonoBehaviour
 {
     int score;

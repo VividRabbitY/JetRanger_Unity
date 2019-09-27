@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//プレイヤー移動管理
+//上下左右移動とジェットパックアクション
 public class PlayerMovement : MonoBehaviour
 {
     
@@ -39,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    //水平面移動
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         moveinput = Quaternion.Euler(0, -45, 0) * moveinput;
             
-
+    //ジェットパック
         if (Input.GetButton("Fire1"))
         {
                 velocity.y += jetForce *1.2f*Time.deltaTime;
@@ -70,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
             audioManager.StopSe(SE.PlayerJet);
         }
 
-
+        //重力
         velocity.x = moveinput.x;
         velocity.z = moveinput.z;
 

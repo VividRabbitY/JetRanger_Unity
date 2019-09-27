@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//プレイヤー射撃
 public class PlayerShoot : MonoBehaviour
 {
 
 
     private bool canShoot;
-    private float shootCooldown=0.1f;
+    private float shootCooldown=0.1f;//射撃間隔
     private float timer;
 
-    public ShotPool shotPool;
-    public Transform shootPoint;
+    public ShotPool shotPool;//弾プール
+    public Transform shootPoint;//射撃位置
 
     AudioManager audioManager;
     // Start is called before the first frame update

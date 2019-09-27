@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//壁に当たる時反射する弾
 public class EnemyShot_Bound : MonoBehaviour
 {
     private Vector3 direction;
     private float speed;
 
-    public int boundTime;
+    public int boundTime;//反射回数
 
     void Update()
     {

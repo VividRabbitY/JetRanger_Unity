@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//エネミー移動制御
 public class EnemyMove1 : MonoBehaviour
 {
     enum MoveState
@@ -14,12 +15,15 @@ public class EnemyMove1 : MonoBehaviour
 
     Vector3 startPos;
 
+    //入場
     public float enterTime;
     public Vector3  enterTargetPos;
     float entertimer;
+    //射撃
     public float shootTime;
     public Vector3 shootTargetPos;
     float shootTimer;
+    //退場
     public float exitTime;
     public Vector3 exitTargetPos;
     float exittimer;

@@ -23,7 +23,7 @@ public class GameStart : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 3.0f) ;
+        if (timer >= 3.0f)
         canStart = true;
     }
     public void Startgame()

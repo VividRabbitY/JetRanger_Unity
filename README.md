@@ -1,2 +1,2 @@
 # orchestra
-A shooting game maked with Unity
+A shooting game made with Unity
